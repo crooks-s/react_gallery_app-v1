@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+
 import apiKey from './config';
 
-function App() {
-  const [count, setCount] = useState(0)
+// App components
+import Search from './components/Search';
+import Nav from './components/Nav';
+import PhotoList from './components/PhotoList';
+import Photo from './components/Photo';
+
+const App = () => {
+  const [] = useState();
+
+  const fetchData = (query) => {
+  fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=dogs&per_page=24&page=1&format=json&nojsoncallback=1`)
+  .then()
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Search />
+      <Nav />
+      <Routes>
+        <Route path="/" element={} />
+        <Route path="cats" element={<PhotoList />} />
+        <Route path="dogs" element={<PhotoList />} />
+        <Route path="computers" element={<PhotoList />} />
+        <Route path="/search/:query" element={<PhotoList />} />
+      </Routes>
+    </div>
   )
 }
 
