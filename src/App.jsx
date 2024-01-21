@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import apiKey from './config';
 
@@ -22,10 +22,6 @@ const App = () => {
     setQuery(newQuery);
     fetchData(newQuery);
   }
-
-  // useEffect(() => {
-  //   fetchData(query)
-  // }, [query]);
 
   return (
     <div>
