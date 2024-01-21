@@ -11,14 +11,12 @@ import NotFound from "./components/NoResults";
 const App = () => {
   const [photos, setPhotos] = useState([]);
   const [query, setQuery] = useState("cats");
-  const [loading, setLoading] = useState(false);
 
   const fetchData = (query) => {
     fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&page=1&format=json&nojsoncallback=1`)
       .then(response => response.json())
       .then(responseData => setPhotos(responseData.photos.photo))
       .catch(err => console.log("Error fetching and parsing data", err))
-      .finally(() => setLoading(false));
   }
 
   const handleQuery = (newQuery) => {
