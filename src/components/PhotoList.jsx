@@ -2,15 +2,16 @@ import React, { useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import Photo from "./Photo";
 import NotFound from './NotFound';
+import PropTypes from 'prop-types';
 
 const PhotoList = ({ handleQuery, title, photos }) => {
   const { query } = useParams();
 
   useEffect(() => {
     if (query) {
-      handleQuery(query);
+    handleQuery(query);
     } else {
-      handleQuery(props.title)
+      handleQuery(title)
     }
   }, [query, title]);
 
@@ -39,6 +40,12 @@ const PhotoList = ({ handleQuery, title, photos }) => {
       {foundResults()}
     </div>
   );
+}
+
+PhotoList.propTypes = {
+  title: PropTypes.string,
+  photos: PropTypes.array,
+  handleQuery: PropTypes.func.isRequired
 }
 
 export default PhotoList;
