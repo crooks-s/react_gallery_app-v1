@@ -1,14 +1,14 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Search = (props) => {
+const Search = ({ handleQuery }) => {
   const search = useRef();
   let navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let searchTag = search.current.value;
-    props.handleQuery(searchTag);
+    handleQuery(searchTag);
     let path = `search/${searchTag}`;
     navigate(path, { replace: true });
   }

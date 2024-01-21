@@ -3,22 +3,22 @@ import { useParams } from "react-router-dom";
 import Photo from "./Photo";
 import NotFound from './NotFound';
 
-const PhotoList = (props) => {
+const PhotoList = ({ handleQuery, title, photos }) => {
   const { query } = useParams();
 
   useEffect(() => {
     if (query) {
-      props.handleQuery(query);
+      handleQuery(query);
     } else {
-      props.handleQuery(props.title)
+      handleQuery(props.title)
     }
-  }, [query, props.title]);
+  }, [query, title]);
 
   const foundResults = () => {
-    if (props.photos.length > 0) {
+    if (photos.length > 0) {
       return (
         <ul>
-          {props.photos.map(photo => (
+          {photos.map(photo => (
             <Photo
               key={photo.id}
               id={photo.id}
