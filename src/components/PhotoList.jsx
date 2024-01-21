@@ -8,11 +8,8 @@ const PhotoList = ({ handleQuery, title, photos }) => {
   const { query } = useParams();
 
   useEffect(() => {
-    if (query) {
-    handleQuery(query);
-    } else {
-      handleQuery(title)
-    }
+    const searchQuery = query || title;
+    handleQuery(searchQuery)
   }, [query, title]);
 
   const foundResults = () => {

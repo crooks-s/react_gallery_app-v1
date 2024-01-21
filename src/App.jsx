@@ -6,7 +6,7 @@ import apiKey from './config';
 import Search from './components/Search';
 import Nav from './components/Nav';
 import PhotoList from './components/PhotoList';
-import NotFound from "./components/NoResults";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   const [photos, setPhotos] = useState([]);
@@ -33,7 +33,7 @@ const App = () => {
         <Route path="cats" element={<PhotoList photos={photos} title={'cats'} handleQuery={handleQuery} />} />
         <Route path="dogs" element={<PhotoList photos={photos} title={'dogs'} handleQuery={handleQuery} />} />
         <Route path="computers" element={<PhotoList photos={photos} title={'computers'} handleQuery={handleQuery} />} />
-        <Route path="/search/:query" element={<PhotoList photos={photos} handleQuery={handleQuery}/>} />
+        <Route path="/search/:query" element={<PhotoList photos={photos} handleQuery={handleQuery} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
