@@ -1,10 +1,7 @@
-const NotFound = () => {
-  return (
-    <div className="not-found">
-      <h3>No Results Found</h3>
-      <p>Your search did not return any results. Please try again.</p>
-    </div >
-  );
-}
+const NotFound = () => (
+  <div className="not-found">
+    <h2>Page Not Found</h2>
+  </div>
+);
 
 export default NotFound;

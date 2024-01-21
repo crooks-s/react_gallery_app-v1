@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import Photo from "./Photo";
-import NotFound from './NotFound';
+import NoResults from './NoResults';
 import PropTypes from 'prop-types';
 
 const PhotoList = ({ handleQuery, title, photos }) => {
@@ -30,7 +30,7 @@ const PhotoList = ({ handleQuery, title, photos }) => {
         </ul>
       );
     } else {
-      return (<NotFound />);
+      return (<NoResults />);
     }
   }
 
