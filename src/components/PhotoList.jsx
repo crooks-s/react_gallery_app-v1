@@ -36,7 +36,7 @@ const PhotoList = ({ handleQuery, title, photos }) => {
 
   return (
     <div className="photo-container">
-      <h2>Results</h2>
+      <h2>Results for {query || title}</h2>
       {foundResults()}
     </div>
   );
