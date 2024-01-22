@@ -1,8 +1,10 @@
-# React + Vite
+# Gallery App.
+TeamTreehouse Unit 7 Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Team Treehouse project in which a single page application was built using the following skills:
+1) React
+2) React Router
+3) Vite
+4) PropTypes
+5) Fetch API
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
